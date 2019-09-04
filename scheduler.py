@@ -48,7 +48,7 @@ def spyder_run():
             #获取代理
             # proxies = get_proxies()
             newsspyder = newsSpyder(FILE_PATH,fp,FILTER,KWS)
-            executor.submit(newsspyder.run())
+            executor.submit(newsspyder.run)
 #清洗data中excel的数据
 def cleaner_run():
     path_li = os.listdir(os.getcwd()+"/data")
@@ -69,7 +69,7 @@ def cleaner_run():
                     FILTER = [k, v.capitalize(), v.lower(), v.upper()]
                     break
             clean = Cleanner(file_name,file_save,MAX_SIMHASH_V,FILTER)
-            executor.submit(clean.run())
+            executor.submit(clean.run)
 if __name__ == '__main__':
     spyder_run()
     print("全部爬取结束，开始清洗和分类")
